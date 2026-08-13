@@ -1,0 +1,65 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore data files and logs for a Minecraft server
+.paper/
+
+logs/
+cache/
+libraries/
+versions/
+playerdata/
+
+/*.json
+
+# World data files
+*.lock
+*.mcmeta
+*.dat_old
+*.dat
+*.mca
+
+# Binary files
+*.jar
+*.zip
+
+# Key and certificate files
+*.pem
+*.key
+
+.license
+
+# CMI plugin log files
+/plugins/CMI/**Log/*.yml
+/plugins/CMI/sellLogs/*.yml
+
+# CMILib plugin save and translation files
+/plugins/CMILib/Saves/*.yml
+/plugins/CMILib/Translations/Items/*.yml
+
+# Chunky plugin task files
+/plugins/Chunky/tasks/
+
+# DiscordSRV plugin data files
+/plugins/DiscordSRV/config.yml
+
+# Geyser plugin data files
+/plugins/Geyser-Spigot/locales
+
+# LuckPerms locale files
+/plugins/LuckPerms/translations
+
+# mcMMO default configuration files
+/plugins/mcMMO/defaults
+
+# MobFarmManager plugin data files
+/plugins/MobFarmManager/Logs/
+
+# TAB plugin playerdata file
+/plugins/TAB/playerdata.yml
+/plugins/TAB/skincache.yml
+/plugins/TAB/users.yml
+/plugins/TAB/groups.yml
+
+# Spark plugin data
+/plugins/spark/

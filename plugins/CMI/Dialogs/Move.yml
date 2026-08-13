@@ -1,0 +1,39 @@
+# For random teleportation and moving dialog
+Move:
+  Enabled: true
+  Label: "{#4caf50}⛏ {#81c784}World RTP {#4caf50}⛏"
+  Description:
+    Width: 300
+    Lines:
+      - "&fTeleport to a random location"
+      - ""
+      - "&c⚠ Warning ⚠"
+      - "&7It might be dangerous at night."
+      - "&7Please prepare your gear!"
+      - ""
+  Buttons:
+    Columns: 1
+    List:
+      - Label: "&fGo to &6Home"
+        Close: true
+        Width: 200
+        Commands:
+          - "closeinv!"
+          - "asPlayer! cmi homes"
+
+      - Label: "&fGo to &cLast Death &fLocation"
+        Close: true
+        Width: 200
+        Commands:
+          - "closeinv!"
+          - "asPlayer! cmi dback"
+
+      - Label: "&fRandom Teleport to &aOverworld"
+        Close: true
+        Width: 200
+        Commands:
+          - "closeinv!"
+          - "asPlayer! cmi rt [playerName] world"
+  Close:
+    Label: "Close"
+    Width: 100

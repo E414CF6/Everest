@@ -1,0 +1,75 @@
+info:
+  prefix: '&e[&aMFM&e] '
+  ArmorStandlLimit: '&6You cant place armor stand in this chunk. Max alowed is &e[amount]&6!'
+  ItemFrameLimit: '&6You cant place item frame in this chunk. Max alowed is &e[amount]&6!'
+  GeneralLimit: '&6Limit reached. Max alowed is &e[amount]&6!'
+  WolfCount: '&cTo many wolfs following you, &7[amount] &cgot seated down'
+  BlockLimit: '&cTo many [type] blocks in one chunk, &7You can only place &e[amount]
+    &7of them'
+  cleanup: '&7Auto cleaned entities: &e[amount]'
+  hoverList: '&f[type]&7: [amount]'
+command:
+  help:
+    output:
+      CommandColor: '&2'
+      VariableColor: '&6'
+      usage: '&eUsage: &6%usage%'
+      title: '&e-------&e ======= &6MFM &e======= &e-------'
+  nocmd:
+    help:
+      info: '&eShows all available commands'
+      args: ''
+  reload:
+    help:
+      info: '&eReload config and locale file'
+      args: ''
+    info:
+      response: '&eConfiguration files was reloaded'
+  list:
+    help:
+      info: '&2List chunks with most entities in them'
+      args: (range) (-all)
+    info:
+      ListP: '&e[place]. &6[x]&e:&6[z] &6Inside: &e[amount]'
+      around: ' &6Around: &7[near]'
+      Command: /tppos [x] [y] [z] [world]
+      Hover: '&6Teleport: &e[world]:[x]:[y]:[z]'
+  clean:
+    help:
+      info: '&2Cleans chunks around players'
+      args: ''
+    info:
+      ClearedList: '&f[type]&6(&7[amount]&6)'
+      Cleared: '&6Cleared &f[entities] &6entities from &7[chunks]&6 chunks: [list]'
+      Nothing: '&6Nothing to remove'
+      Hover: '&f[time]ms &6to check &f[count] &6chunks'
+  limits:
+    help:
+      info: '&2Show limits by your location'
+      args: ''
+    info:
+      size: '&fArea: &7[range]&fx&7[range] &fChunks: &7[chunks]'
+      byGroups: '&eBy groups:'
+      byTypes: '&eBy types:'
+      prefix: '[color][type]'
+      count: ': &7[count]&8/&7[max]'
+  redstone:
+    help:
+      info: '&2List active redstone chunks'
+      args: ''
+    info:
+      List: '&e[place]. &6[x]&e:&6[z] &e(&6[amount]&e)'
+      Command: /tppos [x] [y] [z] [world]
+      Hover: "&6Teleport \n&e[world]"
+  hoppers:
+    help:
+      info: '&2List chunks with most active hoppers in them'
+      args: ''
+    info:
+      RemovedList: '&6[target](&e[amount]&6)'
+      Removed: '&6Removed: [list]!'
+      List: '&e[place]. &6[x]&e:&6[z] &e(&6[amount]&e)'
+      Command: /tppos [x] [y] [z] [world]
+      Hover: "&6Teleport \n&e[world]"
+      notEnabled: '&cHoper control is not enabled!'
+      Changed: '&6Hoper control changed to &e[state]&6!'

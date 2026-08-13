@@ -1,0 +1,215 @@
+# Main server folder spigot.yml and check that stats saving prevention its set to false stats->disable-saving: false
+# Player will get default rank group depending on set permission node cmi.rank.[groupName]
+# Not enabled ranks will be ignored
+# DisplayName section is optional and it will be used to represent rank ingame. This is NOT defining required permission node and you still need to use node name to rankup to this rank
+# DefaultRank section defines if player can be assigned to this rank if he don't have any. There can be more than one default rank, and depending on permision node, first rank will be assigned to that player when needed
+# PermissionRequirement section defines list of permissions player should have to rankup to that rank. Optional - For each permission node you can add its name which will be shown in /cmi rankinfo with : In example cmi.command.fly:Fly
+# McMMORequirement section defines list of McMMO skills and levels player should have to rankup to that rank.
+# AureliumRequirement section defines list of Aurelium skills and levels player should have to rankup to that rank.
+# AuraSkillsRequirement section defines list of Aura skills and levels player should have to rankup to that rank.
+# McMMO and Aurelium sections can use skill name as Power to indicate total sum of all skills
+# JobsRequirement section defines list of Jobs and levels player should have to rankup to that rank.
+# ItemRequirement section defines list of items player should have to rankup to that rank. Items will be taken after succesfull rankup from players inventory.
+# AutoRankup section defines if player will be auto ranked to this rank if possible. Keep in mind that if there is more than one legit rankup, player will have to confirm to which rank he wants to rankup
+# RankupConfirmation section defines if you want to add additional confirmation for this rankup. Usefull to avoid unintentional rankups. Keep in mind that autorankup will request confirmation for rankup to this rank even if there is only one legit rankup option
+# NextRanks is list of possible next ranks from this rank. Can be one or can be dozens. Keep in mind that each rank requirements will be shown in chat and it can clutter quite allot if there is bunch of them at once
+# MoneyCost defines how much player will have to pay to rankup to this rank
+# ExpCost defines how much player will have to pay in exp to rankup to this rank
+# Votes defines how much player will need to have votes to rankup to this rank
+# Commands is list which will be performed on rankup. Can be additional actions, like message broadcast or anything alse
+# Main section is StatsRequirements and it can have allot of different values in it:
+#   In general format goes like this [mainStat](:optionalSubStat):amount
+#   In example MonsterKills:100 will require from player to have 100 monster kills while MonsterKills:Zombie:100 will require to have 100 zombie kills. Both of them can be used if needed.
+#     List of possible requirement and basic explanations:
+#       Distance in blocks:
+#         Travel - travel in total
+#         Walk - has to walk
+#         Sneak - has to sneak
+#         Sprint - has to sprint
+#         Swim - has to swim
+#         Fall - has to fall
+#         Climb - has to climb
+#         Fly - has to fly
+#         Dive - has to swim under water
+#         WalkOn Water - has to walk on water
+#         WalkUnderWater - has to walk under water
+#         MinecartTravel - has to travel with minecart
+#         BoatTravel - has to travel with boat
+#         PigTravel - has to ride pig
+#         HorseTravel - has to ride horse
+#         ElytraTravel - has to fly with elytra
+#         GhastTravel - has to travel with ghast
+#         StriderTravel - has to travel with strider
+#       Time in sec:
+#         PlayTime - total play time
+#         FromLastDeath - from last death
+#         SneakTime - sneak time
+#         TotalWorldTime - total world time
+#       Amounts:
+#         LeaveGame - how many times player left game
+#         Jump - jump count
+#         DamageDealt - total damage made
+#         DamageTaken - total damage taken
+#         DamageDealtAbsorbed - total damage absorbed
+#         DamageDealtResisted - total damage resisted
+#         DamageBlockedByShield - total damage blocked with shield
+#         DamageAbsorbed - total damage absorbed
+#         DamageResisted - total damage resisted
+#         Deaths - count of deaths
+#         KilledBy - defines amount of deaths by monster. If specific monster is not defined, then total amount is used
+#         MobKills - total amount of mobs killed by player
+#         PlayerKills - total amount of players killed. Indirect kills don't count
+#         ItemEnchanted - amount of enchanted items
+#         AnimalsBred - animals bred
+#         FishCaught - fish caught
+#         TalkedToVillager - times talked to villager
+#         TradedWithVillager - traded with willager
+#         CakeSlicesEaten - cake slices eaten
+#         CauldronFilled - cauldron filled
+#         CouldronUsed - couldron used
+#         ArmorCleaned - times armor cleaned (leather armor)
+#         BannerCleaned - times banner cleaned
+#         BrewingStandInteraction - brewingstand interactions
+#         BeaconInteraction - beacon interactions
+#         CraftingTableInteraction - crafting table interactions
+#         FurnaceInteraction - furnace interactions
+#         DispenserInspected - dispenser inspected
+#         DropperInspected - dropper inspected
+#         HopperInspected - hopper inspected
+#         ChestOpened - chest open
+#         TrappedChestTriggered - trapped chest triggered
+#         EnderchestOpened - enderchest opened
+#         NoteblockPlayed - noteblock played
+#         NoteblockTuned - noteblock tuned
+#         FlowerPotted - flower potted
+#         RecordPlayed - record played
+#         SleeptInBed - sleept in bed
+#         ShulkerBoxOpened - shulker box opened
+#         CleanShulkerBox - shulker box cleaned
+#         Drop - defines amount of dropped items. If specific item is not defined, then total amount is used
+#         MineBlock - defines amount of blocks mined. If specific block is not defined, then total amount is used
+#         PlaceBlock - defines amount of blocks placed. If specific block is not defined, then total amount is used
+#         BreakItem - defines amount of broken items. If specific item is not defined, then total amount is used
+#         CraftItem - defines amount of crafted items. If specific item is not defined, then total amount is used
+#         UseItem - defines amount of item usage. like mining with pickaxe. If specific item is not defined, then total amount is used
+#         Pickup - defines amount of picked up items. If specific item is not defined, then total amount is used
+#         KillEntity - defines amount of monster kills. If specific monster is not defined, then total amount is used
+#         InteractWithBlastFurnace - defines amount of interactions with blast furnace.
+#         InteractWithSmoker - defines amount of interactions with smoker.
+#         InteractWithLectern - defines amount of interactions with lectern.
+#         InteractWithCampfire - defines amount of interactions with campfire.
+#         InteractWithCartographyTable - defines amount of interactions with cartography table.
+#         InteractWithLoom - defines amount of interactions with loom.
+#         InteractWithStonecutter - defines amount of interactions with stonecutter.
+#         InteractWithAnvil - defines amount of interactions with anvil.
+#         InteractWithGrindstone - defines amount of interactions with grindstone.
+#         InteractWithSmithingTable - defines amount of interactions with smithing table.
+#         BellRing - defines amount of interactions with bell.
+#         RaidTrigger - defines amount of interactions with raid trigger.
+#         RaidWin - defines amount of interactions with raid win.
+#         TargetHit - defines amount of interactions with target hit.
+#         OpenBarrel - defines amount of interactions with open barrel.
+#         DropCount - defines amount of interactions with drop count.
+
+Coal:
+  Enabled: true
+  DisplayName: '&7Coal'
+  DefaultRank: true
+  AutoRankup: true
+  NextRanks:
+  - Iron
+Iron:
+  Enabled: true
+  DisplayName: '&fIron'
+  AutoRankup: true
+  RankupConfirmation: true
+  NextRanks:
+  - Gold
+  MoneyCost: 500
+  StatsRequirements:
+  - PlayTime:3600
+  - MonsterKills:ZOMBIE:15
+  - BlocksMined:IRON_ORE:30
+  - BlocksMined:1000
+  - Jump:1000
+  McMMORequirement:
+  - woodcutting:5
+  - mining:12
+Gold:
+  Enabled: true
+  DisplayName: '&6Gold'
+  AutoRankup: true
+  RankupConfirmation: true
+  NextRanks:
+  - Diamond
+  MoneyCost: 2000
+  ExpCost: 120
+  StatsRequirements:
+  - PlayTime:7200
+  - travel:12000
+  - MonsterKills:150
+  - BlocksMined:GOLD_ORE:15
+  - BlocksMined:3000
+  McMMORequirement:
+  - taming:15
+  - unarmed:20
+  - power:80
+Diamond:
+  Enabled: true
+  DisplayName: '&bDiamond'
+  AutoRankup: true
+  RankupConfirmation: true
+  MoneyCost: 4000
+  ExpCost: 200
+  NextRanks:
+  - Emerald
+  StatsRequirements:
+  - PlayTime:14400
+  - travel:25000
+  - BlocksMined:DIAMOND_ORE:25
+  - MonsterKills:250
+  - MonsterKills:SKELETON:20
+  - MonsterKills:SLIME:15
+  - Swim:500
+  McMMORequirement:
+  - mining:30
+  - excavation:30
+  - power:150
+Emerald:
+  Enabled: true
+  DisplayName: '&aEmerald'
+  AutoRankup: true
+  RankupConfirmation: true
+  MoneyCost: 10000
+  ExpCost: 400
+  NextRanks:
+  - Netherite
+  StatsRequirements:
+  - PlayTime:21600
+  - Swim:1500
+  - SneakTime:300
+  - MinecartTravel:1000
+  - MonsterKills:750
+  - TalkedToVillager:10
+  - TradedWithVillager:10
+  McMMORequirement:
+  - acrobatics:20
+  - fishing:20
+  - power:250
+Netherite:
+  Enabled: true
+  DisplayName: '&cNetherite'
+  AutoRankup: true
+  RankupConfirmation: true
+  MoneyCost: 50000
+  ExpCost: 2000
+  StatsRequirements:
+  - PlayTime:72000
+  - ElytraTravel:40000
+  - MonsterKills:1500
+  - BlocksMined:40000
+  - BlocksMined:ANCIENT_DEBRIS:10
+  - ItemsUsed:20000
+  McMMORequirement:
+  - power:350
+  - archery:50

@@ -1,0 +1,96 @@
+# Server restart will be needed for changes to take effect
+# Potential priorities: LOWEST, LOW, NORMAL, HIGH, HIGHEST, MONITOR
+# Listeners which performs modifications should never utilize MONITOR priority
+# Setting priority to NONE will potentially disable listener entirely
+ChatPriorities:
+  #  
+  # Public message format handling
+  # Default priority: HIGHEST
+  Format: HIGHEST
+  #  
+  # Public message color handling
+  # Default priority: NORMAL
+  Color: NORMAL
+  #  
+  # Public message item into chat handling
+  # Default priority: NORMAL
+  Item: NORMAL
+  #  
+  # Public message url handling
+  # Default priority: NORMAL
+  Url: NORMAL
+  #  
+  # Public message player tag handling
+  # Default priority: NORMAL
+  Tag: NORMAL
+  #  
+  # Public message player head handling
+  # Default priority: NORMAL
+  # From version: 1.21.9
+  ChatHead: NORMAL
+  #  
+  # Public message sprite handling
+  # Default priority: NORMAL
+  # From version: 1.21.9
+  ChatSprite: NORMAL
+  #  
+  # Public message mute handling
+  # Default priority: LOWEST
+  Mute: LOWEST
+  #  
+  # Player mute handling
+  # Default priority: LOW
+  PlayerMute: LOW
+  #  
+  # Player shadow mute handling
+  # Default priority: LOW
+  PlayerShadowMute: LOW
+  #  
+  # Chat room message handling to be sent to public if ! used
+  # Default priority: LOWEST
+  ChatRoom: LOWEST
+  #  
+  # Staff room message handling to be sent to public if ! used
+  # Default priority: LOWEST
+  Staff: LOWEST
+  #  
+  # Shout message handling
+  # Default priority: LOWEST
+  Shout: LOWEST
+  #  
+  # Bungee message handling
+  # Default priority: MONITOR
+  Bungee: MONITOR
+  #  
+  # Dynmap message handling
+  # Default priority: MONITOR
+  Dynmap: MONITOR
+  #  
+  # Bubble message handling
+  # Default priority: MONITOR
+  # From version: 1.20.0
+  Bubble: MONITOR
+  #  
+  # Public message caps filter handling
+  # Default priority: LOW
+  Caps: LOW
+  #  
+  # Public message blocked word filter handling
+  # Default priority: LOW
+  Filter: LOW
+  #  
+  # Public message simple replacer emoji handling
+  # Default priority: LOWEST
+  SimpleReplacer: LOWEST
+  #  
+  # Command spam prevention handling
+  # Default priority: LOW
+  CommandSpam: LOW
+  #  
+  # Chat spam prevention handling
+  # Default priority: LOW
+  ChatSpam: LOW
+  #  
+  # Sign advertisement handling
+  # Default priority: MONITOR
+  SignAd: MONITOR

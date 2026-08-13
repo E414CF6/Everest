@@ -1,0 +1,20 @@
+Votes:
+  Enabled: true
+  Label: "{#FBBC05}⚡ {#FFFFFF}&lVOTE {#FBBC05}⚡"
+  Description:
+    Width: 300
+    Lines:
+      - "&f서버를 위해 투표하고 {#FBBC05}특별한 보상&f을 챙기세요!"
+      - ""
+      - "&8- &7현재 나의 투표 횟수: {#A8E6CF}%cmi_user_votecount%회"
+      - ""
+      - "&e&o(( 클릭하여 투표 링크 열기 ))"
+  Buttons:
+    Columns: 1
+    List:
+      - Label: "{#7EE8FA}■ &fMINELIST &b[JAVA]"
+        Width: 180
+        Url: "https://minelist.kr/servers/16934-play.67d48d5.me"
+      - Label: "{#96E6A1}■ &fMINELIST &a[BEDROCK]"
+        Width: 180
+        Url: "https://minelist.kr/servers/16935-play.67d48d5.me:19132"

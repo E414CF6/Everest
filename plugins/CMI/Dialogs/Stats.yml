@@ -1,0 +1,206 @@
+# mcMMO Statistics Dialog
+mcMMO:
+  Enabled: true
+  Label: "{#gold}⚔ {#yellow}mcMMO Stats: {#white}%cmi_user_display_name% {#gold}⚔"
+  Description:
+    Width: 320
+    Lines:
+      - "{#b39ddb}Total Power Level: {#673ab7}%mcmmo_power_level%"
+      - ""
+      - "{#4caf50}--- Gathering ---"
+      - "{#81c784}Mining: {#white}%mcmmo_level_mining%  {#81c784}Herbalism: {#white}%mcmmo_level_herbalism%"
+      - "{#81c784}Woodcutting: {#white}%mcmmo_level_woodcutting%  {#81c784}Excavation: {#white}%mcmmo_level_excavation%"
+      - "{#81c784}Fishing: {#white}%mcmmo_level_fishing%  {#81c784}Smelting: {#white}%mcmmo_level_smelting%"
+      - ""
+      - "{#f44336}--- Combat ---"
+      - "{#e57373}Swords: {#white}%mcmmo_level_swords%  {#e57373}Axes: {#white}%mcmmo_level_axes%"
+      - "{#e57373}Unarmed: {#white}%mcmmo_level_unarmed%  {#e57373}Archery: {#white}%mcmmo_level_archery%"
+      - "{#e57373}Taming: {#white}%mcmmo_level_taming%"
+      - ""
+      - "{#2196f3}--- Misc ---"
+      - "{#64b5f6}Repair: {#white}%mcmmo_level_repair%  {#64b5f6}Acrobatics: {#white}%mcmmo_level_acrobatics%"
+      - "{#64b5f6}Alchemy: {#white}%mcmmo_level_alchemy%  {#64b5f6}Salvage: {#white}%mcmmo_level_salvage%"
+      - ""
+  Close:
+    Label: "Close"
+    Width: 100
+    Commands:
+      - "sound:block_chest_close"
+
+# General Player Statistics Dialog
+Stats:
+  Enabled: true
+  Label: "{#00bcd4}📊 {#e0f7fa}Player Statistics {#00bcd4}📊"
+  Description:
+    Width: 320
+    Lines:
+      - "{#b2ebf2}Welcome, {#white}%cmi_user_display_name%"
+      - ""
+      - "{#78909c}Select a category to view details."
+      - ""
+  Buttons:
+    Columns: 2
+    List:
+      # General Information
+      - Label: "{#ffca28}💰 Balance: {#fff9c4}%cmi_user_balance_formatted%"
+        Width: 155
+        Commands:
+          - "asPlayer! balancetop"
+          - "closeinv!"
+      - Label: "{#ab47bc}🏆 Rank: {#f3e5f5}%cmi_user_rank_displayname%"
+        Width: 155
+
+      - Label: "{#66bb6a}📶 Ping: {#e8f5e9}%cmi_user_ping% ms"
+        Width: 155
+        Commands:
+          - "asPlayer! ping"
+          - "closeinv!"
+      - Label: "{#42a5f5}⏳ Total Playtime: {#e3f2fd}%cmi_user_playtime_formatted%"
+        Width: 155
+        Commands:
+          - "asPlayer! playtimetop"
+          - "closeinv!"
+
+      # Category Navigation Buttons
+      # Use OpenDialog to navigate to other dialogs
+      - Label: "{#ef5350}⚔ Combat Stats {#ffebee}➤"
+        Width: 155
+        OpenDialog: Stats_Combat
+        Tooltip:
+          - "{#ef9a9a}Kills, Deaths, Damage"
+          - "{#ef9a9a}Shields & Absorption"
+      - Label: "{#4fc3f7}🏃 Movement Stats {#e1f5fe}➤"
+        Width: 155
+        OpenDialog: Stats_Movement
+        Tooltip:
+          - "{#81d4fa}Walk, Sprint, Fly"
+          - "{#81d4fa}Swim, Elytra"
+
+      - Label: "{#ffb74d}⛏ Blocks & Items {#fff3e0}➤"
+        Width: 155
+        OpenDialog: Stats_Blocks
+        Tooltip:
+          - "{#ffcc80}Mining, Placing"
+          - "{#ffcc80}Crafting, Breaking"
+      - Label: "{#81c784}🧬 Life & Misc {#e8f5e9}➤"
+        Width: 155
+        OpenDialog: Stats_Misc
+        Tooltip:
+          - "{#a5d6a7}Sleep, Fish, Breed"
+          - "{#a5d6a7}Interactions"
+  Close:
+    Label: "Close"
+    Width: 310
+
+# Combat Statistics
+Stats_Combat:
+  Enabled: true
+  Label: "{#ef5350}⚔ Combat Statistics"
+  Buttons:
+    Columns: 2
+    List:
+      - Label: "{#ef5350}⚔ Mob Kills: {#ffebee}%cmi_user_stats_MobKills%"
+        Width: 155
+      - Label: "{#ef9a9a}☠ Deaths: {#f5f5f5}%cmi_user_stats_Deaths%"
+        Width: 155
+
+      - Label: "{#e57373}💥 Damage Dealt: {#ffebee}%cmi_user_stats_DamageDealt%"
+        Width: 155
+      - Label: "{#90a4ae}🛡 Damage Taken: {#eceff1}%cmi_user_stats_DamageTaken%"
+        Width: 155
+
+      - Label: "{#81c784}🛡 Shield Blocked: {#e8f5e9}%cmi_user_stats_DamageBlockedByShield%"
+        Width: 155
+      - Label: "{#ce93d8}🧬 Absorbed: {#f3e5f5}%cmi_user_stats_DamageAbsorbed%"
+        Width: 155
+
+      - Label: "{#b39ddb}✨ Resisted: {#ede7f6}%cmi_user_stats_DamageResisted%"
+        Width: 155
+      - Label: "{#dce775}💀 Time Since Death: {#f9fbe7}%cmi_user_stats_FromLastDeath%"
+        Width: 155
+  Close:
+    Label: "Back to Menu"
+    OpenDialog: Stats
+    Width: 310
+
+# Movement Statistics
+Stats_Movement:
+  Enabled: true
+  Label: "{#4fc3f7}🏃 Movement Statistics"
+  Buttons:
+    Columns: 2
+    List:
+      - Label: "{#4fc3f7}🚶 Walked: {#e1f5fe}%cmi_user_stats_Walk%"
+        Width: 155
+      - Label: "{#29b6f6}🏃 Sprint: {#e1f5fe}%cmi_user_stats_Sprint%"
+        Width: 155
+
+      - Label: "{#4dd0e1}🤫 Sneak: {#e0f7fa}%cmi_user_stats_Sneak%"
+        Width: 155
+      - Label: "{#fff176}🤫 Sneak Time: {#fffde7}%cmi_user_stats_SneakTime%"
+        Width: 155
+
+      - Label: "{#26c6da}🏊 Swim: {#e0f7fa}%cmi_user_stats_Swim%"
+        Width: 155
+      - Label: "{#00acc1}🌊 Dive: {#e0f7fa}%cmi_user_stats_Dive%"
+        Width: 155
+
+      - Label: "{#80deea}🪜 Climb: {#e0f7fa}%cmi_user_stats_Climb%"
+        Width: 155
+      - Label: "{#81d4fa}🪂 Elytra: {#e3f2fd}%cmi_user_stats_ElytraTravel%"
+        Width: 155
+
+      - Label: "{#b3e5fc}🛫 Fly: {#e3f2fd}%cmi_user_stats_Fly%"
+        Width: 310
+  Close:
+    Label: "Back to Menu"
+    OpenDialog: Stats
+    Width: 310
+
+# Blocks & Items
+Stats_Blocks:
+  Enabled: true
+  Label: "{#ffb74d}⛏ Blocks & Items"
+  Buttons:
+    Columns: 2
+    List:
+      - Label: "{#a1887f}⛏ Blocks Mined: {#efebe9}%cmi_user_stats_MineBlock%"
+        Width: 155
+      - Label: "{#bcaaa4}🧱 Blocks Placed: {#efebe9}%cmi_user_stats_PlaceBlock%"
+        Width: 155
+
+      - Label: "{#ffcc80}🎒 Items Picked: {#fff3e0}%cmi_user_stats_Pickup%"
+        Width: 155
+      - Label: "{#ffb74d}📦 Items Dropped: {#fff3e0}%cmi_user_stats_Drop%"
+        Width: 155
+
+      - Label: "{#ff8a65}🛠 Items Broken: {#fbe9e7}%cmi_user_stats_BreakItem%"
+        Width: 310
+  Close:
+    Label: "Back to Menu"
+    OpenDialog: Stats
+    Width: 310
+
+# Miscellaneous Life & Interaction Statistics
+Stats_Misc:
+  Enabled: true
+  Label: "{#81c784}🧬 Life & Interactions"
+  Buttons:
+    Columns: 2
+    List:
+      - Label: "{#81c784}🧪 Brewing Used: {#e8f5e9}%cmi_user_stats_BrewingStandInteraction%"
+        Width: 155
+      - Label: "{#a5d6a7}🛏 Slept: {#e8f5e9}%cmi_user_stats_SleeptInBed%"
+        Width: 155
+
+      - Label: "{#c5e1a5}🎣 Fish Caught: {#f1f8e9}%cmi_user_stats_FishCaught%"
+        Width: 155
+      - Label: "{#ffe082}🐄 Animals Bred: {#fffde7}%cmi_user_stats_AnimalsBred%"
+        Width: 155
+
+      - Label: "{#ffab91}🧑‍🌾 Villager Trades: {#fbe9e7}%cmi_user_stats_TradedWithVillager%"
+        Width: 310
+  Close:
+    Label: "Back to Menu"
+    OpenDialog: Stats
+    Width: 310

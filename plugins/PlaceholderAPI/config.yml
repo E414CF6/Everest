@@ -1,0 +1,52 @@
+# PlaceholderAPI
+# Version: 2.12.3
+# Created by: extended_clip
+# Contributors: https://github.com/PlaceholderAPI/PlaceholderAPI/graphs/contributors
+# Issues: https://github.com/PlaceholderAPI/PlaceholderAPI/issues
+# Expansions: https://placeholderapi.com/ecloud
+# Wiki: https://wiki.placeholderapi.com/
+# Discord: https://helpch.at/discord
+# If you're seeing performance issues with plugins that use component replacement, or things don't look quite right,
+# switch to the replacer provided by adventure itself by changing use_adventure_provided_replacer to true
+# No placeholders are provided with this plugin by default.
+# Download placeholders: /papi ecloud
+check_updates: true
+cloud_enabled: true
+cloud_sorting: name
+boolean:
+  'true': 'yes'
+  'false': 'no'
+date_format: MM/dd/yyyy HH:mm:ss
+detect_malicious_expansions: true
+use_adventure_provided_replacer: false
+debug: false
+expansions:
+  server:
+    server_name: Everest MC
+    time:
+      locale: en-KR
+      zone: Asia/Seoul
+      suffix:
+        week: w
+        day: d
+        hour: h
+        minute: m
+        second: s
+    tps_color:
+      high: '&a'
+      medium: '&e'
+      low: '&c'
+  griefprevention:
+    formatting:
+      thousands: k
+      trillions: T
+      quadrillions: Q
+      billions: B
+      millions: M
+    translate:
+      not-owner: You don't own this claim!
+      unclaimed: Unclaimed
+    color:
+      trusted: '&a'
+      enemy: '&4'
+      neutral: '&7'

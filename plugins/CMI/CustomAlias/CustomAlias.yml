@@ -1,0 +1,65 @@
+#
+# Edit custom variables in game if possible
+# Some extra variables can be used, like [playerName] will insert senders name automatically
+# All global variables should work, you can find full list in locale file
+# You can add delay between commands by inserting line like
+# delay! 5
+# This will delay next commands by defines time in seconds
+# If command is shortened and you need to provide some changing variables like target player name you need to define what and where it should be placed
+# Example: /cmi heal Zrips
+# Can be shortened with custom alias to something like /h zrips by using alias command like
+# cmi heal $1
+# If you need to add more than one variable, use $1- format. Number represents variable place when used in alias command
+# Example: cmi tppos $1-
+# In case you want to print out help page if player enters wrong subcommand, use ? in alias
+# Example: ca ?
+# In this case if player performs /ca wrongsub or /ca anotherwrong
+# Commands under this alias will get executed. Exelent way to show help page and correct usage if needed
+
+CustomAlias:
+  # Initialization commands for Wildy server
+  initWildy:
+    Cmds:
+      - gamerule world announceAdvancements false
+      - gamerule world spectatorsGenerateChunks false
+      - gamerule world_nether announceAdvancements false
+      - gamerule world_nether spectatorsGenerateChunks false
+      - gamerule world_the_end announceAdvancements false
+      - gamerule world_the_end spectatorsGenerateChunks false
+      - papi ecloud download GriefPrevention
+      - papi ecloud download Server
+      - papi reload
+    Perm: true
+    Tab: false
+  # Shortcut for random teleport dialog
+  mv:
+    Cmds:
+      - asConsole! cmi dialogs move [playerName]
+    Tab: true
+  move:
+    Cmds:
+      - asConsole! cmi dialogs move [playerName]
+    Tab: true
+  # Shortcut for stats dialog
+  stats:
+    Cmds:
+      - asConsole! cmi dialogs stats [playerName]
+    Tab: true
+  # Shortcut for mcmmo dialog
+  mcmmo:
+    Cmds:
+      - asConsole! cmi dialogs mcmmo [playerName]
+    Tab: true
+  # Shortcut for votes dialog
+  v:
+    Cmds:
+      - asConsole! cmi dialogs votes [playerName]
+    Tab: true
+  vote:
+    Cmds:
+      - asConsole! cmi dialogs votes [playerName]
+    Tab: true
+  votes:
+    Cmds:
+      - asConsole! cmi dialogs votes [playerName]
+    Tab: true

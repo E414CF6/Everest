@@ -1,0 +1,97 @@
+# RECURRING REWARDS (PayEvery)
+# These rewards are automatically given to players every 'X' seconds of online time.
+# They are great for encouraging active play sessions.
+
+hourly_patrol:
+  DisplayName: "&aHourly Patrol Crate"
+  AutoClaim: true
+  Description:
+    - "&fA small reward for staying active on the server."
+    - "&fYou'll receive a little cash and a random item!"
+  PayEvery: 3600
+  Commands:
+    # Gives the player a small amount of money
+    - asConsole! cmi money give [playerName] 10
+    # Heals the player to full health
+    - asConsole! cmi heal [playerName]
+
+daily_login:
+  DisplayName: "&eDaily Login Bonus"
+  AutoClaim: true
+  Description:
+    - "&fYour reward for logging in and being active for 24 hours."
+    - "&fA generous boost to your wallet!"
+  PayEvery: 86400
+  Commands:
+    # Gives the player a larger sum of money
+    - asConsole! cmi money give [playerName] 10
+
+# PLAYTIME MILESTONE REWARDS (PayFor)
+# These are one-time rewards given to players when their total online time reaches a specific duration.
+# Players must manually claim these.
+
+milestone_1_hour:
+  DisplayName: "&bFirst Hour Reward"
+  AutoClaim: false
+  Description:
+    - "&fYou've been online for one hour!"
+    - "&fClaim your first playtime milestone reward."
+  PayFor: 3600
+  Commands:
+    # Gives the player a small amount of money
+    - asConsole! cmi money give [playerName] 500
+
+milestone_6_hours:
+  DisplayName: "&b6-Hour Veteran"
+  AutoClaim: false
+  Description:
+    - "&fCongratulations on 6 hours of playtime!"
+    - "&fClaim your reward and a little extra experience."
+  PayFor: 21600
+  Commands:
+    # Gives the player a larger sum of money
+    - asConsole! cmi money give [playerName] 2000
+
+milestone_12_hours:
+  DisplayName: "&dHalf-Day Hero"
+  AutoClaim: false
+  Description:
+    - "&fYou've been online for half a day!"
+    - "&fClaim a valuable reward and a special token."
+  PayFor: 43200
+  Commands:
+    # Gives the player a larger sum of money
+    - asConsole! cmi money give [playerName] 5000
+
+milestone_24_hours:
+  DisplayName: "&6Full Day Survivor"
+  AutoClaim: false
+  Description:
+    - "&fAn entire day of playtime! You've earned this."
+    - "&fClaim a huge reward and a Rare Crate Key."
+  PayFor: 86400
+  Commands:
+    # Gives the player a larger sum of money
+    - asConsole! cmi money give [playerName] 15000
+
+milestone_7_days:
+  DisplayName: "&c7-Day Champion"
+  AutoClaim: false
+  Description:
+    - "&fYour commitment is incredible!"
+    - "&fClaim your reward and a VIP crate key."
+  PayFor: 604800
+  Commands:
+    # Gives the player a larger sum of money
+    - asConsole! cmi money give [playerName] 50000
+
+milestone_30_days:
+  DisplayName: "&530-Day Legend"
+  AutoClaim: false
+  Description:
+    - "&fA full month! This is a massive achievement."
+    - "&fClaim the ultimate reward and a special title."
+  PayFor: 2592000
+  Commands:
+    # Gives the player a larger sum of money
+    - asConsole! cmi money give [playerName] 500000
