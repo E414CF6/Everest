@@ -1,4 +1,60 @@
 -- ---------------------------------------------------------
+-- SECURITY WARNING:
+-- This script contains hardcoded credentials for development.
+-- DO NOT USE IN PRODUCTION without changing passwords or
+-- using environment variables/secrets management.
+-- ---------------------------------------------------------
+
+-- Create the local user with the specified password
+CREATE USER IF NOT EXISTS '46770d6'@'localhost' IDENTIFIED BY '7f04916';
+ALTER USER '46770d6'@'localhost' IDENTIFIED BY '7f04916';
+
+-- Grant all privileges to the user on all databases
+GRANT ALL PRIVILEGES ON *.* TO '46770d6'@'localhost';
+
+-- Apply the changes
+FLUSH PRIVILEGES;
+-- Database for the Global server
+CREATE DATABASE IF NOT EXISTS msdgl CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Database for the Wildy server
+CREATE DATABASE IF NOT EXISTS msdwc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS msdgl.luckperms_group_permissions
+(
+    `id`         int(11)      NOT NULL AUTO_INCREMENT,
+    `name`       varchar(36)  NOT NULL,
+    `permission` varchar(200) NOT NULL,
+    `value`      tinyint(1)   NOT NULL,
+    `server`     varchar(36)  NOT NULL,
+    `world`      varchar(64)  NOT NULL,
+    `expiry`     bigint(20)   NOT NULL,
+    `contexts`   varchar(200) NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `luckperms_group_permissions_name` (`name`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_uca1400_ai_ci;
+
+CREATE TABLE IF NOT EXISTS msdgl.luckperms_groups
+(
+    `name` varchar(36) NOT NULL,
+    PRIMARY KEY (`name`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_uca1400_ai_ci;
+
+CREATE TABLE IF NOT EXISTS msdgl.tab_groups
+(
+    `group`    varchar(64)   DEFAULT NULL,
+    `property` varchar(16)   DEFAULT NULL,
+    `value`    varchar(1024) DEFAULT NULL,
+    `world`    varchar(64)   DEFAULT NULL,
+    `server`   varchar(64)   DEFAULT NULL
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_unicode_ci;
+
+-- ---------------------------------------------------------
 -- WARNING:
 -- This script is for INITIALIZATION ONLY.
 -- It resets LuckPerms group permissions for admin/default.
@@ -701,6 +757,60 @@ VALUES (1,
         '{}');
 
 ALTER TABLE msdgl.luckperms_group_permissions AUTO_INCREMENT = 105;
+
+-- Finalize the transaction
+COMMIT;
+
+-- ---------------------------------------------------------
+-- WARNING:
+-- This script is for INITIALIZATION ONLY.
+-- It resets TAB group data for the _DEFAULT_ group.
+-- ---------------------------------------------------------
+
+-- Start a transaction to ensure data integrity
+START TRANSACTION;
+
+-- ---------------------------------------------------------
+-- TAB groups (reset + insert for idempotency)
+-- ---------------------------------------------------------
+
+DELETE
+FROM msdgl.tab_groups
+WHERE `group` = '_DEFAULT_'
+  AND `world` IS NULL
+  AND `server` IS NULL
+  AND `property` IN ('tabprefix', 'tagprefix', 'customtabname', 'tabsuffix', 'tagsuffix');
+
+INSERT INTO msdgl.tab_groups (`group`,
+                              `property`,
+                              `value`,
+                              `world`,
+                              `server`)
+VALUES ('_DEFAULT_',
+        'tabprefix',
+        '%luckperms-prefix%',
+        NULL,
+        NULL),
+       ('_DEFAULT_',
+        'tagprefix',
+        '%luckperms-prefix%',
+        NULL,
+        NULL),
+       ('_DEFAULT_',
+        'customtabname',
+        '%displayname%',
+        NULL,
+        NULL),
+       ('_DEFAULT_',
+        'tabsuffix',
+        '%luckperms-suffix%',
+        NULL,
+        NULL),
+       ('_DEFAULT_',
+        'tagsuffix',
+        '%luckperms-suffix%',
+        NULL,
+        NULL);
 
 -- Finalize the transaction
 COMMIT;

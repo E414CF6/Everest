@@ -13,7 +13,7 @@ playerdata/
 /*.json
 
 /world/players/
-/world/dimensions/minecraft/overworld/mcmmo_regions/
+/world/dimensions/minecraft/**/mcmmo_regions/
 
 *.log
 
@@ -31,8 +31,6 @@ playerdata/
 # Key and certificate files
 *.pem
 *.key
-
-
 
 .license
 

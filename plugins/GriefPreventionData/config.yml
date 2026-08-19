@@ -2,14 +2,14 @@
 
 GriefPrevention:
   SeaLevelOverrides:
-    world: 48
-    world_nether: 36
-    world_the_end: 24
+    world: -1
+    world_nether: -1
+    world_the_end: -1
   Claims:
     Mode:
-      world: Survival
       world_the_end: Disabled
       world_nether: Disabled
+      world: Survival
     PreventGlobalMonsterEggs: true
     PreventTheft: true
     HoppersRequireBuildTrust: false
@@ -119,39 +119,39 @@ GriefPrevention:
   Siege:
     Worlds: []
     BreakableBlocks:
+    - RED_WOOL
+    - OAK_PLANKS
+    - ORANGE_WOOL
+    - DIRT
+    - GREEN_WOOL
+    - CYAN_WOOL
+    - PURPLE_WOOL
+    - GLASS_PANE
+    - DEAD_BUSH
+    - COBBLESTONE
+    - LIME_WOOL
+    - FERN
+    - YELLOW_WOOL
+    - GLASS
+    - DARK_OAK_PLANKS
+    - SNOW
+    - PINK_WOOL
     - GRASS_BLOCK
     - BIRCH_PLANKS
-    - RED_WOOL
-    - DEAD_BUSH
-    - ACACIA_PLANKS
-    - MAGENTA_WOOL
-    - FERN
-    - GRAY_WOOL
-    - GREEN_WOOL
-    - ORANGE_WOOL
-    - OAK_PLANKS
-    - SPRUCE_PLANKS
-    - BLUE_WOOL
-    - SAND
-    - PURPLE_WOOL
-    - SHORT_GRASS
-    - BLACK_WOOL
-    - GLASS_PANE
-    - YELLOW_WOOL
-    - BROWN_WOOL
-    - COBBLESTONE
-    - DARK_OAK_PLANKS
-    - DIRT
-    - WHITE_WOOL
-    - LIGHT_BLUE_WOOL
     - LIGHT_GRAY_WOOL
-    - GLASS
-    - PINK_WOOL
-    - JUNGLE_PLANKS
-    - LIME_WOOL
-    - CYAN_WOOL
-    - SNOW
+    - SHORT_GRASS
+    - LIGHT_BLUE_WOOL
     - GRAVEL
+    - MAGENTA_WOOL
+    - SPRUCE_PLANKS
+    - SAND
+    - JUNGLE_PLANKS
+    - GRAY_WOOL
+    - ACACIA_PLANKS
+    - BROWN_WOOL
+    - BLUE_WOOL
+    - BLACK_WOOL
+    - WHITE_WOOL
     DoorsOpenDelayInSeconds: 300
     CooldownEndInMinutes: 60
   EndermenMoveBlocks: false

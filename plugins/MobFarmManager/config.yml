@@ -212,6 +212,7 @@ EntityGroups:
     - world_nether
     - world_the_end
   Monsters:
+    RemoveExisting: true
     Use: true
     Limit: 40
     List:
@@ -220,7 +221,6 @@ EntityGroups:
     - slime
     - creeper
     - squid
-    RemoveExisting: true
     Worlds:
     - world
     - world_nether
@@ -237,15 +237,15 @@ EntityTypes:
     # This can create effect of entities disapearing in front of players eyes, but still recommended to keep it enabled to prevent exploitation of mobs being pushed into chunks over stacking them
     # If not set then global state is picked from general RemoveExisting
     RemoveExisting: true
-    # When enabled entity will be included in clean process while using /mfm clean command
-    # If not set then defaults to true
-    ManualClean: true
     # When enabled entity will be included in automatic clean process
     # If not set then defaults to true
     AutoClean: true
     # When disabled entity will not be allowed to be spawn over natural means
     # Defaults to true if not set specifically
     NaturalSpawn: true
+    # When enabled entity will be included in clean process while using /mfm clean command
+    # If not set then defaults to true
+    ManualClean: true
     # When enabled instead of removing entity entirely we will disable its AI lowering server resource usage without removing it
     # Keep in mind that this will bypass entity limit, but any entity over the limit will become inactive
     # If not set then defaults to false

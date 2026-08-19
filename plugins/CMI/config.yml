@@ -563,7 +563,7 @@ ExploitPatcher:
   NoCommandsInBed: true
   # Due to major exploit relating to oversized books this is recomended to be enabled
   # While this is set to true players will be limited in how many pages they can create
-  # Limitation is determined by cmi.book.pages.missing locale for command.checkperm.info.variablecolor [20to100]missing locale for command.checkperm.info.permissioncolor  permission node and by default players can create 20 pages
+  # Limitation is determined by cmi.book.pages.§x§a§a§a§a§a§a[20to100]§x§f§f§a§a§0§0 permission node and by default players can create 20 pages
   LimitBooks: true
   # While enabled we will prevent items being teleported with end portal and end beacons
   BlockEndPortalItemTransfers: true
@@ -1272,7 +1272,7 @@ Newbie:
 Kits:
   # When set to true, kit list will be shown in GUI instead of chat list
   GUI: true
-  # When set to true, kit selection gui empty fields will get filled with definet item
+  # When set to true, kit selection gui empty fields will get filled with default item (check CMILib)
   FillEmptyFields: true
   # When enabled players can preview kits they have access to or have cmi.kit.[kitName].preview or cmi.kit.[kitName].* permission node
   KitPreview: true
@@ -1674,6 +1674,9 @@ purge:
   CleanOnStart: false
   # How long player should be offline for his data to be moved
   OfflineDays: 90
+  CMIData:
+    # Do you want to enable player data cleanup from CMI records
+    Enabled: false
   PlayerData:
     # Do you want to enable player data file cleaning
     Enabled: true
