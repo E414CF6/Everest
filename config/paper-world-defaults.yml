@@ -17,13 +17,14 @@ _version: 31
 anticheat:
   anti-xray:
     enabled: true
-    engine-mode: 1
+    engine-mode: 2
     hidden-blocks:
     - copper_ore
     - deepslate_copper_ore
     - raw_copper_block
     - gold_ore
     - deepslate_gold_ore
+    - raw_gold_block
     - iron_ore
     - deepslate_iron_ore
     - raw_iron_block
@@ -31,23 +32,41 @@ anticheat:
     - deepslate_coal_ore
     - lapis_ore
     - deepslate_lapis_ore
-    - mossy_cobblestone
-    - obsidian
-    - chest
     - diamond_ore
     - deepslate_diamond_ore
     - redstone_ore
     - deepslate_redstone_ore
-    - clay
     - emerald_ore
     - deepslate_emerald_ore
+    - nether_gold_ore
+    - nether_quartz_ore
+    - ancient_debris
+    - mossy_cobblestone
+    - obsidian
+    - chest
+    - trapped_chest
     - ender_chest
-    lava-obscures: false
-    max-block-height: 64
+    - barrel
+    - spawner
+    - clay
+    - tnt
+    lava-obscures: true
+    max-block-height: 256
     replacement-blocks:
     - stone
-    - oak_planks
     - deepslate
+    - tuff
+    - granite
+    - diorite
+    - andesite
+    - dirt
+    - gravel
+    - calcite
+    - smooth_basalt
+    - netherrack
+    - basalt
+    - blackstone
+    - oak_planks
     update-radius: 2
     use-permission: false
 chunks:
@@ -63,7 +82,7 @@ chunks:
   fixed-chunk-inhabited-time: -1
   flush-regions-on-save: false
   max-auto-save-chunks-per-tick: 24
-  prevent-moving-into-unloaded-chunks: false
+  prevent-moving-into-unloaded-chunks: true
 collisions:
   allow-player-cramming-damage: false
   allow-vehicle-collisions: true
@@ -259,9 +278,9 @@ fishing-time-range:
   maximum: 600
   minimum: 100
 fixes:
-  disable-unloaded-chunk-enderpearl-exploit: false
+  disable-unloaded-chunk-enderpearl-exploit: true
   falling-block-height-nerf: disabled
-  fix-items-merging-through-walls: false
+  fix-items-merging-through-walls: true
   prevent-tnt-from-moving-in-water: false
   split-overstacked-loot: true
   tnt-entity-height-nerf: disabled

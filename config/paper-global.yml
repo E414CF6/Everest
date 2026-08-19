@@ -22,7 +22,7 @@ anticheat:
         dont-obfuscate:
         - minecraft:lodestone_tracker
         sanitize-count: true
-      enable-item-obfuscation: false
+      enable-item-obfuscation: true
       model-overrides:
         minecraft:elytra:
           also-obfuscate: []
