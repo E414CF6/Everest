@@ -1209,7 +1209,7 @@ Messages:
     - mast(e|ur)b(8|ait|ate)
 Books:
   # Defines default creator name for books when using getbook command
-  DefaultAuthor: Wildy
+  DefaultAuthor: Everest MC
   # When set to true books write date will be added
   AddDate: false
 # Defines name of customtext on players login to server. To disable just set name to non existing customText

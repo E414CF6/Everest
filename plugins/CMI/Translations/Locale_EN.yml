@@ -120,9 +120,9 @@ info:
   # This line can have extra variables: [totalUsers] [onlinePlayers]
   FirstJoin: '{gcp}Welcome {gcs}[playerDisplayName] {gcp}to our server!'
   # Don't forget to enable custom logout messages in config!
-  LogoutCustom: ' {gcs}[playerDisplayName] {gcp}left the game'
+  LogoutCustom: '{gcs}[playerDisplayName] {gcp}left the game'
   # Don't forget to enable custom login messages in config!
-  LoginCustom: ' {gcs}[playerDisplayName] {gcp}joined the game'
+  LoginCustom: '{gcs}[playerDisplayName] {gcp}joined the game'
   deathlocation: '{gcp}You died at x:{gcs}[x]{gcp}, y:{gcs}[y]{gcp}, z:{gcs}[z]{gcp}
     in {gcs}[world]'
   book:
