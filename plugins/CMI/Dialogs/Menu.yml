@@ -1,0 +1,88 @@
+# ==============================================================================
+#  🏔️ Everest Main Navigation Menu Dialog
+# ==============================================================================
+Menu:
+  Enabled: true
+  Label: "{#5e9ca0}🏔️ {#a1dbcd}Everest Main Menu {#5e9ca0}🏔️"
+  Description:
+    Width: 320
+    Lines:
+      - "{#b2ebf2}환영합니다, {#white}%cmi_user_display_name%{#b2ebf2}님!"
+      - "{#cfd8dc}원하시는 메뉴 버튼을 클릭하거나 터치하세요."
+      - ""
+  Buttons:
+    Columns: 2
+    List:
+      # Row 1: Travel & Homes
+      - Label: "{#4caf50}🧭 야생 이동 (RTP)"
+        Width: 155
+        OpenDialog: Move
+        Tooltip:
+          - "{#81c784}오버월드 무작위 텔레포트"
+          - "{#a5d6a7}마지막 사망 위치 복귀"
+
+      - Label: "{#ffb74d}🏠 나의 집 (Homes)"
+        Width: 155
+        Close: true
+        Commands:
+          - "closeinv!"
+          - "asPlayer! cmi homes"
+        Tooltip:
+          - "{#ffcc80}저장된 집 목록 열람 및 이동"
+          - "{#ffe082}/sethome 으로 추가 등록 가능"
+
+      # Row 2: mcMMO & Stats
+      - Label: "{#ef5350}⚔ mcMMO 스킬"
+        Width: 155
+        OpenDialog: mcMMO
+        Tooltip:
+          - "{#ef9a9a}13종 생존 기술 레벨 확인"
+          - "{#ffcdd2}파워 레벨: %mcmmo_power_level%"
+
+      - Label: "{#00bcd4}📊 플레이어 통계"
+        Width: 155
+        OpenDialog: Stats
+        Tooltip:
+          - "{#80deea}전투, 이동, 채광, 상호작용 스탯"
+          - "{#b2ebf2}플레이타임: %cmi_user_playtime_formatted%"
+
+      # Row 3: Claims & Party
+      - Label: "{#ab47bc}🏰 영토 보호 (Claims)"
+        Width: 155
+        OpenDialog: Claims
+        Tooltip:
+          - "{#ce93d8}금 삽 영역 보호 및 권한 공유"
+          - "{#e1bee7}내 영토 목록 및 친구 등록"
+
+      - Label: "{#26a69a}👥 모험 파티 (Party)"
+        Width: 155
+        Close: true
+        Commands:
+          - "closeinv!"
+          - "asPlayer! party"
+        Tooltip:
+          - "{#80cbc4}친구와 파티 맺고 팀킬 방지"
+          - "{#b2dfdb}경험치 공유 혜택"
+
+      # Row 4: Utility & Votes
+      - Label: "{#78909c}🗑️ 쓰레기통 (Trash)"
+        Width: 155
+        Close: true
+        Commands:
+          - "closeinv!"
+          - "asPlayer! cmi trash"
+        Tooltip:
+          - "{#b0bec5}가방에 찬 잡템 버리기"
+
+      - Label: "{#fbc02d}🗳️ 서버 투표 (Vote)"
+        Width: 155
+        OpenDialog: Votes
+        Tooltip:
+          - "{#fff59d}마인리스트 투표 링크 열기"
+          - "{#fff9c4}투표 횟수: %cmi_user_votecount%회"
+
+  Close:
+    Label: "닫기 (Close)"
+    Width: 320
+    Commands:
+      - "sound:block_chest_close"

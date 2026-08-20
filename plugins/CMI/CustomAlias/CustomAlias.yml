@@ -1,23 +1,9 @@
-#
-# Edit custom variables in game if possible
-# Some extra variables can be used, like [playerName] will insert senders name automatically
-# All global variables should work, you can find full list in locale file
-# You can add delay between commands by inserting line like
-# delay! 5
-# This will delay next commands by defines time in seconds
-# If command is shortened and you need to provide some changing variables like target player name you need to define what and where it should be placed
-# Example: /cmi heal Zrips
-# Can be shortened with custom alias to something like /h zrips by using alias command like
-# cmi heal $1
-# If you need to add more than one variable, use $1- format. Number represents variable place when used in alias command
-# Example: cmi tppos $1-
-# In case you want to print out help page if player enters wrong subcommand, use ? in alias
-# Example: ca ?
-# In this case if player performs /ca wrongsub or /ca anotherwrong
-# Commands under this alias will get executed. Exelent way to show help page and correct usage if needed
+# ==============================================================================
+#  🏔️ Everest CMI Custom Aliases Configuration
+# ==============================================================================
 
 CustomAlias:
-  # Initialization commands for Wildy server
+  # Server initialization batch
   initWildy:
     Cmds:
       - gamerule world announceAdvancements false
@@ -31,7 +17,26 @@ CustomAlias:
       - papi reload
     Perm: true
     Tab: false
-  # Shortcut for random teleport dialog
+
+  # ----------------------------------------------------------------------------
+  # 🏔️ Main Menu Dialog Aliases
+  # ----------------------------------------------------------------------------
+  menu:
+    Cmds:
+      - asConsole! cmi dialogs menu [playerName]
+    Tab: true
+  메뉴:
+    Cmds:
+      - asConsole! cmi dialogs menu [playerName]
+    Tab: true
+  m:
+    Cmds:
+      - asConsole! cmi dialogs menu [playerName]
+    Tab: true
+
+  # ----------------------------------------------------------------------------
+  # 🧭 Move & RTP Aliases
+  # ----------------------------------------------------------------------------
   mv:
     Cmds:
       - asConsole! cmi dialogs move [playerName]
@@ -40,17 +45,66 @@ CustomAlias:
     Cmds:
       - asConsole! cmi dialogs move [playerName]
     Tab: true
-  # Shortcut for stats dialog
+  rtp:
+    Cmds:
+      - asConsole! cmi dialogs move [playerName]
+    Tab: true
+  야생:
+    Cmds:
+      - asConsole! cmi dialogs move [playerName]
+    Tab: true
+  이동:
+    Cmds:
+      - asConsole! cmi dialogs move [playerName]
+    Tab: true
+
+  # ----------------------------------------------------------------------------
+  # 📊 Stats & mcMMO Aliases
+  # ----------------------------------------------------------------------------
   stats:
     Cmds:
       - asConsole! cmi dialogs stats [playerName]
     Tab: true
-  # Shortcut for mcmmo dialog
+  스탯:
+    Cmds:
+      - asConsole! cmi dialogs stats [playerName]
+    Tab: true
+  정보:
+    Cmds:
+      - asConsole! cmi dialogs stats [playerName]
+    Tab: true
   mcmmo:
     Cmds:
       - asConsole! cmi dialogs mcmmo [playerName]
     Tab: true
-  # Shortcut for votes dialog
+  스킬:
+    Cmds:
+      - asConsole! cmi dialogs mcmmo [playerName]
+    Tab: true
+
+  # ----------------------------------------------------------------------------
+  # 🏰 Claims & Territory Aliases
+  # ----------------------------------------------------------------------------
+  claims:
+    Cmds:
+      - asConsole! cmi dialogs claims [playerName]
+    Tab: true
+  클레임:
+    Cmds:
+      - asConsole! cmi dialogs claims [playerName]
+    Tab: true
+  보호:
+    Cmds:
+      - asConsole! cmi dialogs claims [playerName]
+    Tab: true
+  공유:
+    Cmds:
+      - asPlayer! trust $1-
+    Tab: true
+
+  # ----------------------------------------------------------------------------
+  # 🗳️ Votes Aliases
+  # ----------------------------------------------------------------------------
   v:
     Cmds:
       - asConsole! cmi dialogs votes [playerName]
@@ -62,4 +116,100 @@ CustomAlias:
   votes:
     Cmds:
       - asConsole! cmi dialogs votes [playerName]
+    Tab: true
+  투표:
+    Cmds:
+      - asConsole! cmi dialogs votes [playerName]
+    Tab: true
+
+  # ----------------------------------------------------------------------------
+  # 🏠 Homes & Teleportation Shortcuts
+  # ----------------------------------------------------------------------------
+  스폰:
+    Cmds:
+      - asPlayer! cmi spawn
+    Tab: true
+  집:
+    Cmds:
+      - asPlayer! cmi home $1-
+    Tab: true
+  홈:
+    Cmds:
+      - asPlayer! cmi home $1-
+    Tab: true
+  집목록:
+    Cmds:
+      - asPlayer! cmi homes
+    Tab: true
+  집설정:
+    Cmds:
+      - asPlayer! cmi sethome $1-
+    Tab: true
+  집삭제:
+    Cmds:
+      - asPlayer! cmi delhome $1-
+    Tab: true
+  요청:
+    Cmds:
+      - asPlayer! cmi tpa $1
+    Tab: true
+  수락:
+    Cmds:
+      - asPlayer! cmi tpaccept
+    Tab: true
+  거절:
+    Cmds:
+      - asPlayer! cmi tpdeny
+    Tab: true
+  뒤로:
+    Cmds:
+      - asPlayer! cmi back
+    Tab: true
+
+  # ----------------------------------------------------------------------------
+  # 🛠️ Utility, Economy & Fun Aliases
+  # ----------------------------------------------------------------------------
+  trash:
+    Cmds:
+      - asPlayer! cmi trash
+    Tab: true
+  쓰레기통:
+    Cmds:
+      - asPlayer! cmi trash
+    Tab: true
+  휴지통:
+    Cmds:
+      - asPlayer! cmi trash
+    Tab: true
+  돈:
+    Cmds:
+      - asPlayer! cmi money
+    Tab: true
+  지갑:
+    Cmds:
+      - asPlayer! cmi money
+    Tab: true
+  보내기:
+    Cmds:
+      - asPlayer! cmi pay $1-
+    Tab: true
+  송금:
+    Cmds:
+      - asPlayer! cmi pay $1-
+    Tab: true
+  앉기:
+    Cmds:
+      - asPlayer! cmi sit
+    Tab: true
+  눕기:
+    Cmds:
+      - asPlayer! cmi lay
+    Tab: true
+  모자:
+    Cmds:
+      - asPlayer! cmi hat
+    Tab: true
+  핑:
+    Cmds:
+      - asPlayer! cmi ping
     Tab: true

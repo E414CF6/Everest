@@ -1,0 +1,57 @@
+# ==============================================================================
+#  🏰 Everest Claims & Territory Management Dialog
+# ==============================================================================
+Claims:
+  Enabled: true
+  Label: "{#ab47bc}🏰 {#ce93d8}영토 보호 & 클레임 관리 {#ab47bc}🏰"
+  Description:
+    Width: 320
+    Lines:
+      - "{#e1bee7}금 삽(Golden Shovel)으로 내 집과 상자를 안전하게 보호하세요."
+      - ""
+      - "{#f3e5f5}• 첫 번째 모서리 우클릭 ➔ 대각선 모서리 우클릭"
+      - "{#f3e5f5}• 친구 신뢰 부여: {#fff59d}/trust <친구닉네임>"
+      - ""
+  Buttons:
+    Columns: 2
+    List:
+      - Label: "{#ba68c8}📍 내 영토 목록"
+        Width: 155
+        Close: true
+        Commands:
+          - "closeinv!"
+          - "asPlayer! claimslist"
+        Tooltip:
+          - "{#e1bee7}내가 소유한 모든 클레임 좌표 확인"
+
+      - Label: "{#ab47bc}🛡️ 현재 위치 보호"
+        Width: 155
+        Close: true
+        Commands:
+          - "closeinv!"
+          - "asPlayer! claim"
+        Tooltip:
+          - "{#ce93d8}현재 서 있는 곳을 기본 영역으로 보호"
+
+      - Label: "{#8e24aa}📊 보유 블록 수 확인"
+        Width: 155
+        Close: true
+        Commands:
+          - "closeinv!"
+          - "asPlayer! claimsexplanation"
+        Tooltip:
+          - "{#ba68c8}보호 가능한 잔여 블록 수 확인"
+
+      - Label: "{#e53935}❌ 현재 영역 삭제"
+        Width: 155
+        Close: true
+        Commands:
+          - "closeinv!"
+          - "asPlayer! abandonclaim"
+        Tooltip:
+          - "{#ef9a9a}현재 밟고 있는 클레임 삭제 및 블록 환불"
+
+  Close:
+    Label: "메인 메뉴로 돌아가기 (Back)"
+    OpenDialog: Menu
+    Width: 320
