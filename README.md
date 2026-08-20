@@ -13,7 +13,7 @@
 **"함께 떠나는 스릴 넘치는 야생 탐험! 에베레스트(Everest)에 오신 것을 환영합니다."**  
 어려움(Hard) 난이도의 쫄깃한 긴장감 속에서 건축, 모험, mcMMO 성장을 함께 즐겨보세요.
 
-[📖 서버 공식 위키 (Wiki)](./WIKI.md) • [📜 서버 규칙](./docs/01_rules.md) • [⚔️ 생존 가이드](./docs/02_hardcore_system.md) • [📱 모바일/베드락 접속](./docs/05_crossplay.md)
+[📖 공식 GitHub 위키](https://github.com/E414CF6/Everest/wiki) • [📜 서버 규칙](https://github.com/E414CF6/Everest/wiki/Rules) • [⚔️ 생존 가이드](https://github.com/E414CF6/Everest/wiki/Hardcore) • [📱 모바일 접속](https://github.com/E414CF6/Everest/wiki/Crossplay)
 
 </div>
 
@@ -71,7 +71,7 @@
 | **포트 (Port)** | `25565` (기본값) | `19132` (기본값) |
 | **지원 버전** | 최신 버전 권장 | `최신 Bedrock Edition` |
 
-> 자세한 모바일/콘솔 접속 방법은 [📱 크로스플레이 가이드](./docs/05_crossplay.md)를 참고해 주세요.
+> 자세한 모바일/콘솔 접속 방법은 [📱 크로스플레이 가이드](https://github.com/E414CF6/Everest/wiki/Crossplay)를 참고해 주세요.
 
 ---
 
@@ -81,12 +81,12 @@
 
 | 문서 | 설명 | 바로가기 |
 | :--- | :--- | :---: |
-| 📜 **서버 규칙 & 가이드라인** | 비인가 프로그램, PvP/약탈 규칙, 채팅 에티켓 | [바로가기](./docs/01_rules.md) |
-| 💀 **하드코어 생존 매뉴얼** | 사망 패널티, 목숨 및 부활 메커니즘, 환경 위험 | [바로가기](./docs/02_hardcore_system.md) |
-| ⛏️ **mcMMO 스킬트리 가이드** | 13종 스킬 소개, 액티브 스킬 사용법, 야생 팁 | [바로가기](./docs/03_mcmmo_skills.md) |
-| 🏰 **영토 보호 & 클레임** | 금삽을 이용한 영토 지정, 신뢰(`trust`) 설정 | [바로가기](./docs/04_claims_territory.md) |
-| 📱 **크로스플레이 접속 안내** | 모바일/콘솔/스위치 베드락 유저 접속 방법 | [바로가기](./docs/05_crossplay.md) |
-| ⌨️ **플레이어 명령어 사전** | 서버 내 유용한 전체 명령어 모음 | [바로가기](./docs/06_commands.md) |
+| 📜 **서버 규칙 & 가이드라인** | 비인가 프로그램, PvP/약탈 규칙, 채팅 에티켓 | [바로가기](https://github.com/E414CF6/Everest/wiki/Rules) |
+| ⚔️ **어려움(Hard) 생존 매뉴얼** | 배고픔 관리, 사망/리스폰 팁, 협동 야생 가이드 | [바로가기](https://github.com/E414CF6/Everest/wiki/Hardcore) |
+| ⛏️ **mcMMO 스킬트리 가이드** | 13종 스킬 소개, 액티브 스킬 사용법, 야생 팁 | [바로가기](https://github.com/E414CF6/Everest/wiki/mcMMO) |
+| 🏰 **영토 보호 & 클레임** | 금삽을 이용한 영토 지정, 신뢰(`trust`) 설정 | [바로가기](https://github.com/E414CF6/Everest/wiki/Claiming) |
+| 📱 **크로스플레이 접속 안내** | 모바일/콘솔/스위치 베드락 유저 접속 방법 | [바로가기](https://github.com/E414CF6/Everest/wiki/Crossplay) |
+| ⌨️ **플레이어 명령어 사전** | 올인원 메뉴(`/menu`) 및 한글 단축어 모음 | [바로가기](https://github.com/E414CF6/Everest/wiki/Commands) |
 
 ---
 
