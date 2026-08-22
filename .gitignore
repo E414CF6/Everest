@@ -61,11 +61,5 @@ playerdata/
 # MobFarmManager plugin data files
 /plugins/MobFarmManager/Logs/
 
-# TAB plugin playerdata file
-/plugins/TAB/playerdata.yml
-/plugins/TAB/skincache.yml
-/plugins/TAB/users.yml
-/plugins/TAB/groups.yml
-
 # Spark plugin data
 /plugins/spark/

@@ -221,8 +221,8 @@ cmd_stop() {
     return 0
   fi
 
-  log_info "Sending graceful 'stop' command to server console..."
-  tmux send-keys -t "$SESSION_NAME" "stop" C-m
+  tmux send-keys -t "$SESSION_NAME" -l "stop"
+  tmux send-keys -t "$SESSION_NAME" Enter
 
   local timeout=30
   local count=0
@@ -300,7 +300,8 @@ cmd_send() {
     exit 1
   fi
   log_info "Sending command to server: '${command}'"
-  tmux send-keys -t "$SESSION_NAME" "$command" C-m
+  tmux send-keys -t "$SESSION_NAME" -l "$command"
+  tmux send-keys -t "$SESSION_NAME" Enter
   log_success "Command dispatched."
 }
 

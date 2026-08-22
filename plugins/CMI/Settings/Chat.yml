@@ -18,8 +18,8 @@ Chat:
     # Defines name of global chat channel in discordsrv
     GlobalChannel: global
     # Indicator which can be used as {discord} in chat format to indicate that message came from discord and not ingame
-    Label: '&3Discord &8» &r'
-    UnlinkedLabel: '&bDiscord &8» &r'
+    Label: '&3Discord &8» &f'
+    UnlinkedLabel: '&bDiscord &8» &f'
     # When enabled and you have ranged messages enabled, we will send all of them to DiscordSRV
     # When disabled, only shouts and messages sent by players with cmi.chat.rangebypass permission node will be visible in discord
     RangedMessages: true
@@ -71,7 +71,7 @@ Chat:
   # Used for simple chat messages. Optional variables: {displayName} {world} {prefix} {suffix} {group} {shout} {shoutcolor} {message} {nicknameprefix}. Supporting PlaceHolderAPI variables like %player_server% %cmi_user_chatcolor%
   # As of 1.21.9 Paper servers you can include {head} to add players head icon
   # ATTENTION! Don't use gradient colors for {message} variable, if you want to apply gradient for it, utilize GeneralMessageFormat section
-  GeneralFormat: '{prefix}{displayName} &8» &r{message}'
+  GeneralFormat: '{prefix}{displayName} &8» &f{message}'
   # Will define message format itself, this allows to have gradients in messages
   # It NEEDS to contain {message} otherwise we will ignore this setup
   # For 1.16+ servers you can use color gradients like '{#b3a28f>}{message}{#d7b8e6<}'
@@ -134,9 +134,9 @@ Chat:
 
   # ATTENTION! Don't use gradient colors for {message} variable, if you want to apply gradient for it, utilize GroupMessageFormat section
   GroupFormat:
-    '1': '{prefix}&f{displayName} &8» &r{message}'
-    '2': '{prefix}&f{displayName} &8» &r{message}'
-    '3': '{prefix}&f{displayName} &8» &r{message}'
+    '1': '{prefix}&f{displayName} &8» &f{message}'
+    '2': '{prefix}&f{displayName} &8» &f{message}'
+    '3': '{prefix}&f{displayName} &8» &f{message}'
   # Use numeric increments to separate groups from each other. If player has more than one, then line with higher number will be used
   # Add as many lines as you need too
   # cmi.chatmessagegroup.[id] permnission node to use

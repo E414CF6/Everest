@@ -150,7 +150,6 @@ Everest 서버를 구성하는 주요 플러그인 목록입니다.
 | **ViaVersion & ViaBackwards** | 다양한 마인크래프트 클라이언트 버전 호환성 제공 | [ViaVersion CI](https://ci.viaversion.com/) |
 | **Chunky & ChunkyBorder** | 청크 사전 생성(Pre-generation) 및 월드 경계 제한 | [Modrinth](https://modrinth.com/collection/RleYjAxf) |
 | **CoreProtect** | 블록 및 상자 상호작용 실시간 로깅/롤백 엔진 | [CoreProtect](https://www.spigotmc.org/resources/coreprotect.8631/) |
-| **TAB** | 플레이어 탭리스트 & 네임태그 커스텀 | [NEZNAMY](https://github.com/NEZNAMY/TAB) |
 | **LuckPerms** | 고성능 권한 관리 시스템 | [LuckPerms](https://luckperms.net/) |
 | **DiscordSRV** | 디스코드 서버 채팅 양방향 연동 | [SpigotMC](https://www.spigotmc.org/resources/discordsrv.18494/) |
 
