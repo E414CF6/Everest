@@ -189,6 +189,10 @@ CustomAlias:
     Cmds:
       - asPlayer! cmi money
     Tab: true
+  돈순위:
+    Cmds:
+      - asPlayer! cmi baltop
+    Tab: true
   보내기:
     Cmds:
       - asPlayer! cmi pay $1-
@@ -196,6 +200,18 @@ CustomAlias:
   송금:
     Cmds:
       - asPlayer! cmi pay $1-
+    Tab: true
+  판매:
+    Cmds:
+      - asPlayer! cmi sell $1-
+    Tab: true
+  시세:
+    Cmds:
+      - asPlayer! cmi worth $1-
+    Tab: true
+  영토구매:
+    Cmds:
+      - asPlayer! gp:buyclaimblocks $1-
     Tab: true
   앉기:
     Cmds:

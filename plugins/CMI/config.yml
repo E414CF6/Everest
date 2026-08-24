@@ -80,7 +80,7 @@ Economy:
     ExcludeInactive: 0
   Global:
     # Starting amount of money players will have
-    StartingAmount: 10.0
+    StartingAmount: 100.0
     # Minimal amount, can go into negative if needed
     MinimalAmount: 0.0
     # Maximal amount of money player can have. Set to -1 to disable this limit
