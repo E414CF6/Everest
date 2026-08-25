@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/env bash
 
-adb tcpip 36127 && sleep 4
+adb tcpip 35555 && sleep 4
 
 adb shell dumpsys deviceidle disable
 adb shell dumpsys deviceidle whitelist +com.termux
@@ -11,7 +11,6 @@ adb shell settings put global settings_enable_monitor_phantom_procs false
 adb shell settings put global power_manager_constants "sustained_performance_mode=1"
 adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
 
-# adb connect tty.tplinkdns.com:36127
 # adb devices -l
 
 # scp *.jar termux:Everest/plugins
