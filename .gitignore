@@ -1,6 +1,10 @@
 # Ignore macOS system files
 .DS_Store
 
+# IDE files
+.idea/
+
+
 # Ignore data files and logs for a Minecraft server
 .paper/
 
