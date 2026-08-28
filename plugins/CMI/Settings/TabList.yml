@@ -29,20 +29,16 @@ TabList:
   # Full list can be checked ingame with /cmi placeholders
   GeneralFormat:
     # This will define how others see players name in tab list
-    PlayerName: '[playerDisplayName]'
+    PlayerName: '%cmi_user_prefix%[playerDisplayName]'
     Header:
       '1':
       - ''
-      - '&6&l&o⛰ &f&l&oEverest &a&l&oMC'
-      - '&7&oPlay with friends'
+      - '   &6&l&o⛰ &f&l&oEverest &a&l&oMC   '
       - ''
     Footer:
       '1':
       - ''
-      - '&7Online: &a%server_online%&7/&a%server_max_players%  &8|  &7Ping: &e%cmi_user_ping%&7ms  &8|  &7TPS:
-        &a%server_tps_1%'
-      - '&8&m                                                  '
-      - '&7메뉴: &f/메뉴 &8| &7내 집: &f/홈 &8| &7야생: &f/야생 &8| &7도움말: &f/help'
+      - '%server_tps_1_colored% &8/ &e&o%cmi_user_ping% &7ms'
       - ''
   useGeneralName: true
   # When this set to true, in case you dint defined PlayerName, Header or Footer in GroupFormat, then default one from GeneralFormat will be used
