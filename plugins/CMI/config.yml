@@ -469,6 +469,10 @@ Optimizations:
     List:
       # Sorts players custom groups in Ascending or descending order
       ASCOrder: true
+    Sc:
+      # When enabled copying sign text we will take into consideration players sign color access
+      # While disabled text with its colors will be copied as it is without any changes or limitations
+      ClearColors: true
     Give:
       # When enabled items in give command will be limited to same limits as it is set for enchants, same permission requirements will apply
       LimitEnchants: false

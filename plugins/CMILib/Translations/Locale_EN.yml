@@ -427,128 +427,128 @@ info:
     zombified_piglin: Zombified piglin
   # Avoid adding color codes to the enchant name
   EnchantNames:
-    riptide: Riptide
-    density: Density
-    mending: Mending
-    quick_charge: Quick_Charge
-    breach: Breach
-    loyalty: Loyalty
-    smite: Smite
-    lunge: Lunge
-    luck_of_the_sea: Luck_Of_The_Sea
     frost_walker: Frost_Walker
-    flame: Flame
-    fortune: Fortune
-    power: Power
-    vanishing_curse: Vanishing_Curse
-    knockback: Knockback
-    thorns: Thorns
-    bane_of_arthropods: Bane_Of_Arthropods
-    sharpness: Sharpness
-    blast_protection: Blast_Protection
-    protection: Protection
-    efficiency: Efficiency
-    impaling: Impaling
-    projectile_protection: Projectile_Protection
-    unbreaking: Unbreaking
     infinity: Infinity
+    projectile_protection: Projectile_Protection
+    smite: Smite
+    sharpness: Sharpness
     wind_burst: Wind_Burst
-    respiration: Respiration
-    swift_sneak: Swift_Sneak
-    binding_curse: Binding_Curse
-    punch: Punch
-    feather_falling: Feather_Falling
-    fire_protection: Fire_Protection
-    multishot: Multishot
-    sweeping_edge: Sweeping_Edge
-    silk_touch: Silk_Touch
-    fire_aspect: Fire_Aspect
     piercing: Piercing
-    aqua_affinity: Aqua_Affinity
-    soul_speed: Soul_Speed
+    riptide: Riptide
     channeling: Channeling
     looting: Looting
+    silk_touch: Silk_Touch
+    quick_charge: Quick_Charge
+    blast_protection: Blast_Protection
+    density: Density
+    knockback: Knockback
+    power: Power
+    breach: Breach
+    loyalty: Loyalty
+    flame: Flame
+    bane_of_arthropods: Bane_Of_Arthropods
+    luck_of_the_sea: Luck_Of_The_Sea
+    mending: Mending
+    fire_protection: Fire_Protection
+    thorns: Thorns
+    aqua_affinity: Aqua_Affinity
+    feather_falling: Feather_Falling
+    efficiency: Efficiency
+    fortune: Fortune
+    punch: Punch
+    vanishing_curse: Vanishing_Curse
+    protection: Protection
     depth_strider: Depth_Strider
+    unbreaking: Unbreaking
     lure: Lure
+    multishot: Multishot
+    binding_curse: Binding_Curse
+    lunge: Lunge
+    impaling: Impaling
+    swift_sneak: Swift_Sneak
+    soul_speed: Soul_Speed
+    fire_aspect: Fire_Aspect
+    respiration: Respiration
+    sweeping_edge: Sweeping_Edge
   PotionEffectAliases:
-    conduitpower:
-    - Conduit power
-    luck:
-    - Luck
-    oozing:
-    - Oozing
-    hunger:
-    - Hunger
-    raidomen:
-    - Raid omen
-    speed:
-    - Speed
-    resistance:
-    - Resistance
-    badomen:
-    - Bad omen
-    absorption:
-    - Absorption
-    strength:
-    - Strength
-    dolphinsgrace:
-    - Dolphins grace
-    slowfalling:
-    - Slow falling
-    trialomen:
-    - Trial omen
     waterbreathing:
     - Water breathing
-    blindness:
-    - Blindness
-    saturation:
-    - Saturation
-    wither:
-    - Wither
-    windcharged:
-    - Wind charged
-    fireresistance:
-    - Fire resistance
-    invisibility:
-    - Invisibility
-    levitation:
-    - Levitation
-    nightvision:
-    - Night vision
-    miningfatigue:
-    - Mining fatigue
-    poison:
-    - Poison
-    weaving:
-    - Weaving
-    unluck:
-    - Unluck
-    nausea:
-    - Nausea
+    hunger:
+    - Hunger
+    speed:
+    - Speed
+    absorption:
+    - Absorption
     regeneration:
     - Regeneration
-    slowness:
-    - Slowness
-    instantdamage:
-    - Instant damage
+    nightvision:
+    - Night vision
+    nausea:
+    - Nausea
+    badomen:
+    - Bad omen
+    resistance:
+    - Resistance
+    blindness:
+    - Blindness
     instanthealth:
     - Instant health
-    infested:
-    - Infested
-    haste:
-    - Haste
-    healthboost:
-    - Health boost
-    heroofthevillage:
-    - Hero of the village
-    darkness:
-    - Darkness
     jumpboost:
     - Jump boost
+    windcharged:
+    - Wind charged
+    dolphinsgrace:
+    - Dolphins grace
+    invisibility:
+    - Invisibility
+    poison:
+    - Poison
+    infested:
+    - Infested
+    trialomen:
+    - Trial omen
+    fireresistance:
+    - Fire resistance
+    darkness:
+    - Darkness
+    haste:
+    - Haste
+    slowfalling:
+    - Slow falling
+    levitation:
+    - Levitation
+    strength:
+    - Strength
+    weaving:
+    - Weaving
+    raidomen:
+    - Raid omen
+    instantdamage:
+    - Instant damage
+    miningfatigue:
+    - Mining fatigue
+    wither:
+    - Wither
+    oozing:
+    - Oozing
     weakness:
     - Weakness
     glowing:
     - Glowing
+    slowness:
+    - Slowness
+    healthboost:
+    - Health boost
+    saturation:
+    - Saturation
+    unluck:
+    - Unluck
+    conduitpower:
+    - Conduit power
+    luck:
+    - Luck
+    heroofthevillage:
+    - Hero of the village
 dialog:
   signEditor: Sign Editor
   update: Update

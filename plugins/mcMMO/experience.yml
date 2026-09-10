@@ -339,6 +339,10 @@ Experience_Values:
         Red_Mushroom_Block: 70
         Brown_Mushroom_Block: 70
         Mushroom_Stem: 80
+        Poplar_Log: 95
+        Stripped_Poplar_Log: 95
+        Stripped_Poplar_Wood: 85
+        Poplar_Wood: 85
     Herbalism:
         Bush: 11
         Cactus_Flower: 60
@@ -450,6 +454,8 @@ Experience_Values:
         Wither_Rose: 500
         Torchflower: 90
         Golden_Dandelion: 150
+        Red_Shrub: 11
+        Shelf_Mushroom: 50
     Mining:
         Sculk: 4
         Sculk_Vein: 3
