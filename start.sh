@@ -16,7 +16,7 @@ set -euo pipefail
 # Configuration
 # ------------------------------------------------------------------------------
 SESSION_NAME="${EVEREST_SESSION:-everest}"
-MIN_RAM="${MIN_RAM:-2048M}"
+MIN_RAM="${MIN_RAM:-4096M}"
 MAX_RAM="${MAX_RAM:-4096M}"
 SERVER_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 LOG_FILE="${SERVER_DIR}/logs/latest.log"
@@ -69,10 +69,10 @@ else
   C_GRAY=''
 fi
 
-log_info()    { printf '%s[%s]%s %s[INFO]%s  %s\n' "$C_GRAY" "$(date '+%H:%M:%S')" "$C_RESET" "$C_BLUE" "$C_RESET" "$*"; }
+log_info() { printf '%s[%s]%s %s[INFO]%s  %s\n' "$C_GRAY" "$(date '+%H:%M:%S')" "$C_RESET" "$C_BLUE" "$C_RESET" "$*"; }
 log_success() { printf '%s[%s]%s %s[OK]%s    %s\n' "$C_GRAY" "$(date '+%H:%M:%S')" "$C_RESET" "$C_GREEN" "$C_RESET" "$*"; }
-log_warn()    { printf '%s[%s]%s %s[WARN]%s  %s\n' "$C_GRAY" "$(date '+%H:%M:%S')" "$C_RESET" "$C_YELLOW" "$C_RESET" "$*"; }
-log_error()   { printf '%s[%s]%s %s[ERROR]%s %s\n' "$C_GRAY" "$(date '+%H:%M:%S')" "$C_RESET" "$C_RED" "$C_RESET" "$*" >&2; }
+log_warn() { printf '%s[%s]%s %s[WARN]%s  %s\n' "$C_GRAY" "$(date '+%H:%M:%S')" "$C_RESET" "$C_YELLOW" "$C_RESET" "$*"; }
+log_error() { printf '%s[%s]%s %s[ERROR]%s %s\n' "$C_GRAY" "$(date '+%H:%M:%S')" "$C_RESET" "$C_RED" "$C_RESET" "$*" >&2; }
 
 # ------------------------------------------------------------------------------
 # Helper Functions
@@ -87,9 +87,11 @@ is_running() {
 find_server_jar() {
   local jar
   # Prefer paper-*.jar sorted by version descending
+  # shellcheck disable=SC2012
   jar=$(ls -1t "${SERVER_DIR}"/paper-*.jar 2>/dev/null | head -n 1 || true)
   if [[ -z "$jar" ]]; then
     # Fallback to server.jar or any *.jar excluding plugins/libraries
+    # shellcheck disable=SC2012
     jar=$(ls -1t "${SERVER_DIR}"/*.jar 2>/dev/null | head -n 1 || true)
   fi
 
@@ -126,6 +128,7 @@ run_server_loop() {
   echo -e "${C_CYAN}${C_BOLD}======================================================${C_RESET}"
 
   local crash_count=0
+  # shellcheck disable=SC2034
   local last_crash=0
 
   while true; do
@@ -262,6 +265,7 @@ cmd_status() {
     local pid
     pid=$(pgrep -f "paper.*\.jar" | head -n 1 || true)
     if [[ -n "$pid" ]]; then
+      # shellcheck disable=SC2034
       local mem_info cpu_info
       mem_info=$(ps -o rss= -p "$pid" 2>/dev/null | awk '{printf "%.1f MB", $1/1024}' || echo "N/A")
       echo -e "  Java PID     : ${pid}"
@@ -312,50 +316,50 @@ cmd_send() {
 ACTION="${1:-start}"
 
 case "$ACTION" in
-  __internal_run)
-    run_server_loop
-    ;;
-  start)
-    cmd_start
-    ;;
-  console|attach|c|a)
-    cmd_console
-    ;;
-  stop)
-    cmd_stop
-    ;;
-  restart|r)
-    cmd_restart
-    ;;
-  status|s)
-    cmd_status
-    ;;
-  logs|log|l)
-    cmd_logs
-    ;;
-  cmd|send|exec)
-    shift
-    cmd_send "$@"
-    ;;
-  fg|run|foreground)
-    run_server_loop
-    ;;
-  help|-h|--help)
-    echo -e "${C_BOLD}Usage:${C_RESET} $0 [command]"
-    echo ""
-    echo -e "  ${C_CYAN}start${C_RESET} (default)     Start server in background via tmux"
-    echo -e "  ${C_CYAN}console${C_RESET}, ${C_CYAN}attach${C_RESET}     Attach to server interactive console"
-    echo -e "  ${C_CYAN}stop${C_RESET}                Gracefully save and stop the server"
-    echo -e "  ${C_CYAN}restart${C_RESET}             Restart the server"
-    echo -e "  ${C_CYAN}status${C_RESET}              Show server running state and resource usage"
-    echo -e "  ${C_CYAN}logs${C_RESET}                Follow server log in real-time"
-    echo -e "  ${C_CYAN}cmd <command>${C_RESET}       Send in-game command (e.g. ./start.sh cmd say hi)"
-    echo -e "  ${C_CYAN}fg${C_RESET}                  Run directly in foreground"
-    echo ""
-    ;;
-  *)
-    log_error "Unknown action: $ACTION"
-    echo "Run '$0 help' for available commands."
-    exit 1
-    ;;
+__internal_run)
+  run_server_loop
+  ;;
+start)
+  cmd_start
+  ;;
+console | attach | c | a)
+  cmd_console
+  ;;
+stop)
+  cmd_stop
+  ;;
+restart | r)
+  cmd_restart
+  ;;
+status | s)
+  cmd_status
+  ;;
+logs | log | l)
+  cmd_logs
+  ;;
+cmd | send | exec)
+  shift
+  cmd_send "$@"
+  ;;
+fg | run | foreground)
+  run_server_loop
+  ;;
+help | -h | --help)
+  echo -e "${C_BOLD}Usage:${C_RESET} $0 [command]"
+  echo ""
+  echo -e "  ${C_CYAN}start${C_RESET} (default)     Start server in background via tmux"
+  echo -e "  ${C_CYAN}console${C_RESET}, ${C_CYAN}attach${C_RESET}     Attach to server interactive console"
+  echo -e "  ${C_CYAN}stop${C_RESET}                Gracefully save and stop the server"
+  echo -e "  ${C_CYAN}restart${C_RESET}             Restart the server"
+  echo -e "  ${C_CYAN}status${C_RESET}              Show server running state and resource usage"
+  echo -e "  ${C_CYAN}logs${C_RESET}                Follow server log in real-time"
+  echo -e "  ${C_CYAN}cmd <command>${C_RESET}       Send in-game command (e.g. ./start.sh cmd say hi)"
+  echo -e "  ${C_CYAN}fg${C_RESET}                  Run directly in foreground"
+  echo ""
+  ;;
+*)
+  log_error "Unknown action: $ACTION"
+  echo "Run '$0 help' for available commands."
+  exit 1
+  ;;
 esac
